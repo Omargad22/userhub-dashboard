@@ -3,7 +3,7 @@
    Modern Admin Dashboard
    ================================ */
 
-/* CSS Variables */
+/* CSS Variables - Light Theme */
 :root {
     /* Colors */
     --primary: #3B82F6;
@@ -231,6 +231,35 @@ select {
 .sidebar-footer {
     padding: 20px;
     border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.logout-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 10px;
+    color: #EF4444;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.logout-btn:hover {
+    background: #EF4444;
+    color: white;
+    transform: scale(1.05);
+}
+
+.logout-btn svg {
+    width: 20px;
+    height: 20px;
 }
 
 .user-info {

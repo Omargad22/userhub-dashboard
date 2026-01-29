@@ -30,7 +30,7 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li class="active">
-                        <a href="#dashboard">
+                        <a href="index.html">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="3" width="7" height="7" />
                                 <rect x="14" y="3" width="7" height="7" />
@@ -41,7 +41,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#users">
+                        <a href="pages/users.html">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                                 <circle cx="9" cy="7" r="4" />
@@ -52,7 +52,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#analytics">
+                        <a href="pages/analytics.html">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <line x1="18" y1="20" x2="18" y2="10" />
                                 <line x1="12" y1="20" x2="12" y2="4" />
@@ -62,7 +62,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#roles">
+                        <a href="pages/roles.html">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#settings">
+                        <a href="pages/settings.html">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="3" />
                                 <path
@@ -89,6 +89,13 @@
                         <span class="user-role">Administrator</span>
                     </div>
                 </div>
+                <button class="logout-btn" id="logoutBtn" title="Logout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                </button>
             </div>
         </aside>
 
@@ -105,8 +112,8 @@
                         </svg>
                     </button>
                     <div class="page-title">
-                        <h1>User Management</h1>
-                        <p>Manage and monitor user accounts</p>
+                        <h1>Dashboard</h1>
+                        <p>Welcome back! Here's your overview</p>
                     </div>
                 </div>
                 <div class="header-right">
@@ -140,8 +147,8 @@
                     </div>
                     <div class="stat-info">
                         <h3>Total Users</h3>
-                        <p class="stat-number" id="totalUsers">2,847</p>
-                        <span class="stat-change positive">+12.5% from last month</span>
+                        <p class="stat-number" id="totalUsers">0</p>
+                        <span class="stat-change positive">All registered users</span>
                     </div>
                 </div>
                 <div class="stat-card">
@@ -155,8 +162,8 @@
                     </div>
                     <div class="stat-info">
                         <h3>New Users</h3>
-                        <p class="stat-number" id="newUsers">148</p>
-                        <span class="stat-change positive">+8.2% from last month</span>
+                        <p class="stat-number" id="newUsers">0</p>
+                        <span class="stat-change positive">This month</span>
                     </div>
                 </div>
                 <div class="stat-card">
@@ -168,8 +175,8 @@
                     </div>
                     <div class="stat-info">
                         <h3>Active Users</h3>
-                        <p class="stat-number" id="activeUsers">2,234</p>
-                        <span class="stat-change positive">+5.4% from last month</span>
+                        <p class="stat-number" id="activeUsers">0</p>
+                        <span class="stat-change positive">Currently active</span>
                     </div>
                 </div>
                 <div class="stat-card">
@@ -182,8 +189,8 @@
                     </div>
                     <div class="stat-info">
                         <h3>Pending Users</h3>
-                        <p class="stat-number" id="pendingUsers">23</p>
-                        <span class="stat-change negative">-2.1% from last month</span>
+                        <p class="stat-number" id="pendingUsers">0</p>
+                        <span class="stat-change negative">Awaiting approval</span>
                     </div>
                 </div>
             </section>
@@ -191,7 +198,7 @@
             <!-- Users Table Section -->
             <section class="table-section">
                 <div class="table-header">
-                    <h2>All Users</h2>
+                    <h2>Recent Users</h2>
                     <div class="table-actions">
                         <div class="filter-dropdown">
                             <select id="roleFilter">
@@ -241,7 +248,7 @@
                 <div class="table-footer">
                     <div class="table-info">
                         Showing <span id="showingStart">1</span> to <span id="showingEnd">10</span> of <span
-                            id="totalEntries">50</span> entries
+                            id="totalEntries">0</span> entries
                     </div>
                     <div class="pagination" id="pagination">
                         <!-- Pagination will be inserted here by JavaScript -->
@@ -303,6 +310,10 @@
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password (leave empty to keep current)</label>
+                    <input type="password" id="password">
                 </div>
                 <div class="form-row">
                     <div class="form-group">
@@ -367,7 +378,362 @@
 
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        /* ================================
+           UserHub Dashboard JavaScript
+           ================================ */
+
+        let currentPage = 1;
+        const itemsPerPage = 10;
+        let editingUserId = null;
+        let deletingUserId = null;
+        let userGrowthChart = null;
+        let userRolesChart = null;
+
+        // DOM Elements
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const searchInput = document.getElementById('searchInput');
+        const roleFilter = document.getElementById('roleFilter');
+        const statusFilter = document.getElementById('statusFilter');
+        const usersTableBody = document.getElementById('usersTableBody');
+        const pagination = document.getElementById('pagination');
+        const addUserBtn = document.getElementById('addUserBtn');
+        const userModal = document.getElementById('userModal');
+        const deleteModal = document.getElementById('deleteModal');
+        const userForm = document.getElementById('userForm');
+        const selectAllCheckbox = document.getElementById('selectAll');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await auth.init();
+            loadDashboard();
+            setupEventListeners();
+        });
+
+        // Event Listeners Setup
+        function setupEventListeners() {
+            sidebarToggle.addEventListener('click', () => sidebar.classList.toggle('collapsed'));
+            mobileMenuBtn.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+
+            document.addEventListener('click', (e) => {
+                if (!sidebar.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    sidebar.classList.remove('mobile-open');
+                }
+            });
+
+            searchInput.addEventListener('input', debounce(() => { currentPage = 1; loadUsers(); }, 300));
+            roleFilter.addEventListener('change', () => { currentPage = 1; loadUsers(); });
+            statusFilter.addEventListener('change', () => { currentPage = 1; loadUsers(); });
+
+            addUserBtn.addEventListener('click', () => openUserModal());
+            document.getElementById('closeModal').addEventListener('click', closeUserModal);
+            document.getElementById('cancelBtn').addEventListener('click', closeUserModal);
+            document.getElementById('closeDeleteModal').addEventListener('click', closeDeleteModal);
+            document.getElementById('cancelDeleteBtn').addEventListener('click', closeDeleteModal);
+
+            userModal.querySelector('.modal-overlay').addEventListener('click', closeUserModal);
+            deleteModal.querySelector('.modal-overlay').addEventListener('click', closeDeleteModal);
+
+            userForm.addEventListener('submit', handleFormSubmit);
+            document.getElementById('confirmDeleteBtn').addEventListener('click', confirmDelete);
+
+            selectAllCheckbox.addEventListener('change', (e) => {
+                const checkboxes = usersTableBody.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(cb => cb.checked = e.target.checked);
+            });
+
+            logoutBtn.addEventListener('click', () => auth.logout());
+
+            document.getElementById('growthPeriod').addEventListener('change', (e) => loadGrowthChart(e.target.value));
+        }
+
+        async function loadDashboard() {
+            await Promise.all([
+                loadStats(),
+                loadUsers(),
+                loadGrowthChart(30),
+                loadRolesChart()
+            ]);
+        }
+
+        async function loadStats() {
+            try {
+                const response = await api.getStats();
+                const stats = response.stats;
+                document.getElementById('totalUsers').textContent = stats.totalUsers.toLocaleString();
+                document.getElementById('activeUsers').textContent = stats.activeUsers.toLocaleString();
+                document.getElementById('pendingUsers').textContent = stats.pendingUsers.toLocaleString();
+                document.getElementById('newUsers').textContent = stats.newUsersThisMonth.toLocaleString();
+            } catch (error) {
+                console.error('Failed to load stats:', error);
+            }
+        }
+
+        async function loadUsers() {
+            try {
+                const params = {
+                    page: currentPage,
+                    limit: itemsPerPage,
+                    search: searchInput.value,
+                    role: roleFilter.value,
+                    status: statusFilter.value
+                };
+
+                const response = await api.getUsers(params);
+                renderUsers(response.users, response.pagination);
+            } catch (error) {
+                console.error('Failed to load users:', error);
+            }
+        }
+
+        function renderUsers(users, paginationData) {
+            usersTableBody.innerHTML = users.map(user => `
+                <tr>
+                    <td><input type="checkbox" data-id="${user.id}"></td>
+                    <td>
+                        <div class="user-cell">
+                            <div class="user-table-avatar" style="background: ${user.avatar}">
+                                ${user.firstName[0]}${user.lastName[0]}
+                            </div>
+                            <span class="user-table-name">${user.firstName} ${user.lastName}</span>
+                        </div>
+                    </td>
+                    <td>${user.email}</td>
+                    <td><span class="role-badge role-${user.role.toLowerCase()}">${user.role}</span></td>
+                    <td><span class="status-badge status-${user.status.toLowerCase()}">${user.status}</span></td>
+                    <td>${formatDate(user.joined)}</td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="action-btn edit" onclick="editUser(${user.id})" title="Edit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+                                    <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn delete" onclick="deleteUser(${user.id}, '${user.firstName} ${user.lastName}')" title="Delete">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"/>
+                                    <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+
+            const { page, limit, total, totalPages } = paginationData;
+            document.getElementById('showingStart').textContent = total ? (page - 1) * limit + 1 : 0;
+            document.getElementById('showingEnd').textContent = Math.min(page * limit, total);
+            document.getElementById('totalEntries').textContent = total;
+
+            renderPagination(totalPages);
+        }
+
+        function renderPagination(totalPages) {
+            let html = `<button ${currentPage === 1 ? 'disabled' : ''} onclick="goToPage(${currentPage - 1})">Prev</button>`;
+
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    html += `<button class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    html += `<button disabled>...</button>`;
+                }
+            }
+
+            html += `<button ${currentPage === totalPages || totalPages === 0 ? 'disabled' : ''} onclick="goToPage(${currentPage + 1})">Next</button>`;
+            pagination.innerHTML = html;
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            loadUsers();
+        }
+
+        async function loadGrowthChart(period) {
+            try {
+                const response = await api.getMonthlyTrends();
+                const growthCtx = document.getElementById('userGrowthChart');
+
+                if (userGrowthChart) userGrowthChart.destroy();
+
+                userGrowthChart = new Chart(growthCtx, {
+                    type: 'line',
+                    data: {
+                        labels: response.trends.labels,
+                        datasets: [{
+                            label: 'New Users',
+                            data: response.trends.data,
+                            borderColor: '#3B82F6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            fill: true,
+                            tension: 0.4,
+                            borderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } }
+                    }
+                });
+            } catch (error) {
+                console.error('Failed to load growth chart:', error);
+            }
+        }
+
+        async function loadRolesChart() {
+            try {
+                const response = await api.getRolesDistribution();
+                const rolesCtx = document.getElementById('userRolesChart');
+
+                if (userRolesChart) userRolesChart.destroy();
+
+                userRolesChart = new Chart(rolesCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: response.distribution.map(d => d.name),
+                        datasets: [{
+                            data: response.distribution.map(d => d.count),
+                            backgroundColor: response.distribution.map(d => d.color),
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: { legend: { position: 'bottom' } }
+                    }
+                });
+            } catch (error) {
+                console.error('Failed to load roles chart:', error);
+            }
+        }
+
+        function openUserModal(user = null) {
+            if (user) {
+                document.getElementById('modalTitle').textContent = 'Edit User';
+                document.getElementById('firstName').value = user.firstName;
+                document.getElementById('lastName').value = user.lastName;
+                document.getElementById('email').value = user.email;
+                document.getElementById('role').value = user.role;
+                document.getElementById('status').value = user.status;
+                document.getElementById('userId').value = user.id;
+                editingUserId = user.id;
+            } else {
+                document.getElementById('modalTitle').textContent = 'Add New User';
+                userForm.reset();
+                editingUserId = null;
+            }
+            userModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeUserModal() {
+            userModal.classList.remove('active');
+            document.body.style.overflow = '';
+            userForm.reset();
+            editingUserId = null;
+        }
+
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const userData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                role: document.getElementById('role').value,
+                status: document.getElementById('status').value,
+            };
+
+            const password = document.getElementById('password').value;
+            if (password) userData.password = password;
+
+            try {
+                if (editingUserId) {
+                    await api.updateUser(editingUserId, userData);
+                    showNotification('User updated successfully!', 'success');
+                } else {
+                    await api.createUser(userData);
+                    showNotification('User added successfully!', 'success');
+                }
+                closeUserModal();
+                loadDashboard();
+            } catch (error) {
+                showNotification(error.message || 'Operation failed', 'error');
+            }
+        }
+
+        async function editUser(id) {
+            try {
+                const response = await api.getUser(id);
+                openUserModal(response.user);
+            } catch (error) {
+                showNotification('Failed to load user', 'error');
+            }
+        }
+
+        function deleteUser(id, name) {
+            deletingUserId = id;
+            document.getElementById('deleteUserName').textContent = name;
+            deleteModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDeleteModal() {
+            deleteModal.classList.remove('active');
+            document.body.style.overflow = '';
+            deletingUserId = null;
+        }
+
+        async function confirmDelete() {
+            if (deletingUserId) {
+                try {
+                    await api.deleteUser(deletingUserId);
+                    showNotification('User deleted successfully!', 'success');
+                    closeDeleteModal();
+                    loadDashboard();
+                } catch (error) {
+                    showNotification(error.message || 'Delete failed', 'error');
+                }
+            }
+        }
+
+        function formatDate(dateString) {
+            return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(...args), wait);
+            };
+        }
+
+        function showNotification(message, type = 'success') {
+            const existing = document.querySelector('.notification');
+            if (existing) existing.remove();
+
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed; bottom: 24px; right: 24px; padding: 16px 24px;
+                background: ${type === 'success' ? 'linear-gradient(135deg, #22C55E 0%, #16A34A 100%)' : 'linear-gradient(135deg, #EF4444 0%, #DC2626 100%)'};
+                color: white; border-radius: 12px; font-weight: 500;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); z-index: 9999;
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+    </script>
 </body>
 
 </html>
