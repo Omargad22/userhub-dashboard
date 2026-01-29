@@ -203,13 +203,6 @@
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkB1c2VyaHViLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2OTY5NjczOSwiZXhwIjoxNzY5NzgzMTM5fQ.giUQplDLRE0F5bouRZiwWc0zrGf4BObWUf12_d0CB7k",
       "createdAt": "2026-01-29T14:25:39.318Z",
       "expiresAt": "2026-01-30T14:25:39.318Z"
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkB1c2VyaHViLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2OTY5ODI4MSwiZXhwIjoxNzY5Nzg0NjgxfQ.rsbts8PHGl7CMvQby974ENF8CZ8IMqtIMjvWCH5uK9k",
-      "createdAt": "2026-01-29T14:51:21.665Z",
-      "expiresAt": "2026-01-30T14:51:21.665Z"
     }
   ]
 }
